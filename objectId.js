@@ -36,3 +36,17 @@ console.log("counter: ", id.id.slice(6, 9));
 console.log(id._bsontype);
 console.log(mongoose.Types.ObjectId.isValid(id));
 console.log(mongoose.Types.ObjectId.toString(id));
+
+const Joi = require('@hapi/joi')
+Joi.objectId = require('joi-objectid')(Joi)
+
+const schema = Joi.object({
+  _id: Joi.objectId(),
+  name: Joi.string().max(100),
+})
+
+const data1 = {
+  _id: '123',
+  name: 'test',
+};
+console.log(schema.validate(data1).error);

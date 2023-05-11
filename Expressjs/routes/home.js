@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require('./../../export').express
 const route = express.Router()
 
 

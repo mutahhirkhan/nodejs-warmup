@@ -1,10 +1,11 @@
-const localDebug = require("debug")("app:local");
-const Joi = require("joi");
-const morgan = require("morgan");
-const config = require("config");
-const helmet = require("helmet");
+//importing all the required modules from root directory
+const localDebug = require("./../export").debug("app:local");
+const Joi = require("./../export").joi;
+const morgan = require("./../export").morgan;
+const config = require("./../export").config;
+const helmet = require("./../export").helmet;
 const { logger, addTimestamp, addTimestampReturnedMiddleware, loggerReturnedMiddleware } = require("./middleware");
-const express = require("express");
+const express = require("./../export").express;
 const app = express();
 
 //importing routes

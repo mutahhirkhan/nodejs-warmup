@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require("./../export").mongoose;
 const {Schema} = mongoose;
 
 //connect to mongodb
