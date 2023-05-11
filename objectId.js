@@ -26,7 +26,7 @@
  *
  */
 
-const mongoose = require("./relationships/export");
+const mongoose = require("mongoose");
 const id = new mongoose.Types.ObjectId();
 console.log("_id: ", id);
 console.log("timestamp: ", id.getTimestamp());
