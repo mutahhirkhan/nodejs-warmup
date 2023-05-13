@@ -26,7 +26,7 @@
  *
  */
 
-const mongoose = require("mongoose");
+const mongoose = require("../export").mongoose;
 const id = new mongoose.Types.ObjectId();
 console.log("_id: ", id);
 console.log("timestamp: ", id.getTimestamp());
@@ -37,8 +37,8 @@ console.log(id._bsontype);
 console.log(mongoose.Types.ObjectId.isValid(id));
 console.log(mongoose.Types.ObjectId.toString(id));
 
-const Joi = require('@hapi/joi')
-Joi.objectId = require('joi-objectid')(Joi)
+const Joi = require('../export').hapiJoi
+Joi.objectId = (require('../export').joiObjectId)(Joi)
 
 const schema = Joi.object({
   _id: Joi.objectId(),
